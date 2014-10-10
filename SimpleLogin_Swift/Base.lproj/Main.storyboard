@@ -1,22 +1,72 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6162" systemVersion="14A238h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A314h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6160"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="SimpleLogin_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y27-yX-kNX">
+                                <rect key="frame" x="41" y="89" width="508" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2iv-Mp-Ji6">
+                                <rect key="frame" x="41" y="152" width="508" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEG-EL-fFT">
+                                <rect key="frame" x="41" y="241" width="508" height="30"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="yaK-VM-vVm"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fha-0o-tbH">
+                                <rect key="frame" x="41" y="361" width="508" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="9hI-Fl-iyU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Y27-yX-kNX" firstAttribute="trailing" secondItem="2iv-Mp-Ji6" secondAttribute="trailing" id="2ZU-cP-dPY"/>
+                            <constraint firstItem="2iv-Mp-Ji6" firstAttribute="trailing" secondItem="zEG-EL-fFT" secondAttribute="trailing" id="2tj-dC-9Rx"/>
+                            <constraint firstItem="fha-0o-tbH" firstAttribute="leading" secondItem="zEG-EL-fFT" secondAttribute="leading" id="5v7-Pb-Fpo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Y27-yX-kNX" secondAttribute="trailing" constant="35" id="F6U-Zn-BYx"/>
+                            <constraint firstItem="2iv-Mp-Ji6" firstAttribute="top" secondItem="Y27-yX-kNX" secondAttribute="bottom" constant="33" id="FEl-DB-X6e"/>
+                            <constraint firstItem="fha-0o-tbH" firstAttribute="trailing" secondItem="zEG-EL-fFT" secondAttribute="trailing" id="Hyy-C4-FsT"/>
+                            <constraint firstItem="2iv-Mp-Ji6" firstAttribute="leading" secondItem="Y27-yX-kNX" secondAttribute="leading" id="L83-gc-qej"/>
+                            <constraint firstItem="Y27-yX-kNX" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="69" id="NBt-ZM-QDR"/>
+                            <constraint firstItem="zEG-EL-fFT" firstAttribute="top" secondItem="2iv-Mp-Ji6" secondAttribute="bottom" constant="59" id="P26-7t-IT9"/>
+                            <constraint firstItem="fha-0o-tbH" firstAttribute="top" secondItem="zEG-EL-fFT" secondAttribute="bottom" constant="90" id="Q0j-xO-gTP"/>
+                            <constraint firstItem="2iv-Mp-Ji6" firstAttribute="leading" secondItem="zEG-EL-fFT" secondAttribute="leading" id="RB4-9s-V8W"/>
+                            <constraint firstItem="Y27-yX-kNX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="25" id="V3u-Dx-2YW"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="displayLabel" destination="fha-0o-tbH" id="Mmo-ez-7u7"/>
+                        <outlet property="password" destination="2iv-Mp-Ji6" id="j0U-4f-jvA"/>
+                        <outlet property="userName" destination="Y27-yX-kNX" id="URA-Tt-vZ2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
